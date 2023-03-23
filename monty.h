@@ -61,4 +61,5 @@ void f_push(stack_t **head, unsigned int count);
 void addnode(stack_t **head, int n);
 void f_queue(stack_t **head, unsigned int count);
 void addqueue(stack_t **head, int n);
+ssize_t getline(char **content, size_t *read_line, FILE *file);
 #endif
