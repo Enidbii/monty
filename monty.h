@@ -32,5 +32,9 @@ typedef struct instruction_s
 
 int execute(char *content, stack_t **stack, unsigned int count, FILE *file);
 void free_stack(stack_t, *head);
-
+void f_pall(stack_t *head, unsigned int count);
+void f_push(stack_t **head, unsigned int count);
+void addnode(stack_t *head, int n);
+void f_queue(stack_t **head, unsigned int count);
+void addqueue(stack_t *head, int n);
 #endif
