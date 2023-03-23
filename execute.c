@@ -1,4 +1,4 @@
-#include "maint.h"
+#include "monty.h"
 /**
  * execute - implement the opcode
  * @content: what is in the line
@@ -10,17 +10,17 @@
 int execute(char *content, stack_t **stack, unsigned int count, FILE *file)
 {
 	instruction_t opst[] = {
-		{"push", f_push}, {"pall", f_pall}
+		{"push", f_push}, {"pall", f_pall},
 		{NULL, NULL}
 	};
 
 	unsigned int i = 0;
 	char *opc;
 
-	opc = strtok(content, "\n\t");
-	if (opc && opcode[0] == "#")
+	opc = strtok(content, " \n\t");
+	if (opc && opc[0] == '#')
 		return (0);
-	bus.arg = strtok(NULL, "\n\t");
+	bus.arg = strtok(NULL, " \n\t");
 	while (opst[i].opcode && opc)
 	{
 		if (strcmp(opc, opst[i].opcode) == 0)
@@ -32,7 +32,7 @@ int execute(char *content, stack_t **stack, unsigned int count, FILE *file)
 	}
 	if (opc && opst[i].opcode == NULL)
 	{
-		fprint(stderr, "L%d: unknown instruction %s\n", count, opc);
+		fprintf(stderr, "L%d: unknown instruction %s\n", count, opc);
 		fclose(file);
 		free(content);
 		free_stack(*stack);

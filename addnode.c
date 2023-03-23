@@ -1,11 +1,11 @@
-#include "monty.h"a
+#include "monty.h"
 
 /**
  * addnode - add a node to the stack
  * @head: head of stack
  * @n: integer
  */
-void addnode(stack_t *head, int n)
+void addnode(stack_t **head, int n)
 {
 	stack_t *new_node, *aux;
 

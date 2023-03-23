@@ -1,4 +1,7 @@
-#include "main.h"
+#include "monty.h"
+#include <stdio.h>
+#include <stdlib.h>
+bus_t bus = {NULL, NULL, NULL, 0};
 
 /**
  * main - monty code interpreter
@@ -20,7 +23,7 @@ int main(int argc, char *argv[])
 		fprintf(stderr, "USAGE: monty file\n");
 		exit(EXIT_FAILURE);
 	}
-	file = fopen(argv[i], "r");
+	file = fopen(argv[1], "r");
 	bus.file = file;
 	if (!file)
 	{
@@ -35,7 +38,7 @@ int main(int argc, char *argv[])
 		count++;
 		if (read_line > 0)
 		{
-			execute(content, &stack, counter, file);
+			execute(content, &stack, count, file);
 		}
 		free(content);
 	}

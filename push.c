@@ -20,7 +20,7 @@ void f_push(stack_t **head, unsigned int count)
 		}
 		if (flag == 1)
 		{
-			fprinf(stderr, "L%d: usage: push integer\n", count);
+			fprintf(stderr, "L%d: usage: push integer\n", count);
 			fclose(bus.file);
 			free(bus.content);
 			free_stack(*head);
@@ -29,7 +29,7 @@ void f_push(stack_t **head, unsigned int count)
 	}
 	else
 	{
-		fprintf(stderr, "L%d: usage: push integer\n", counter);
+		fprintf(stderr, "L%d: usage: push integer\n", count);
 		fclose(bus.file);
 		free(bus.content);
 		free_stack(*head);

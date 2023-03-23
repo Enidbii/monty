@@ -5,7 +5,7 @@
  * @head: head of the stack
  * @count: void
 */
-void f_pall(stack_t *head, unsigned int count)
+void f_pall(stack_t **head, unsigned int count)
 {
 	stack_t *h;
 	(void) count;
